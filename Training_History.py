@@ -1,0 +1,11 @@
+metric = "sparse_categorical_accuracy"
+plt.figure()
+plt.plot(history.history[metric])
+plt.plot(history.history["val_" + metric])
+plt.ylabel(metric, fontsize="large")
+plt.xlabel("epoch", fontsize="large")
+plt.legend(["train", "val"], loc="best")
+plt.title("model " + metric)
+plt.savefig("total_sparse_categorical_accuracy.svg")
+plt.show()
+plt.close()
